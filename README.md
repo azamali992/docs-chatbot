@@ -24,6 +24,13 @@ uvicorn server:app --reload
 
 Open http://localhost:8000 and click the chat button.
 
+Or with Docker:
+
+```bash
+docker build -t docs-chatbot .
+docker run -p 8000:8000 --env-file .env -v "$PWD/kb:/app/kb:ro" docs-chatbot
+```
+
 | Variable | Where to get it |
 |---|---|
 | `GEMINI_API_KEY` | https://aistudio.google.com/apikey (free tier works) |
